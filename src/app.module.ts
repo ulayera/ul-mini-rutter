@@ -1,6 +1,5 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { restResources } from '@shopify/shopify-api/rest/admin/2023-04';
 import { shopifyApi, ApiVersion } from '@shopify/shopify-api';
@@ -15,7 +14,6 @@ import { ShopifyWrapper } from './shopify-wrapper/shopify-wrapper';
   ],
   controllers: [AppController],
   providers: [
-    AppService,
     {
       provide: ShopifyWrapper,
       useFactory: () => {
